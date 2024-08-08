@@ -24,6 +24,5 @@ int main (){
     std::this_thread::sleep_for(std::chrono::seconds(2)); 
     std::cout << " that may not appear immediately";
 
-
     return 0;
 }
