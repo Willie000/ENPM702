@@ -1,0 +1,43 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+class Animal #FFFFFF{
+    #species: std::string
+    +make_sound(sound: std::string): void
+}
+class Bird #FFFFFF{
+    -wing_span: double
+    +can_fly(): bool
+}
+class Elephant #FFFFFF{
+    +use_trunk(): void
+}
+
+
+
+Animal <|-- Bird : +public
+Animal <|-- Elephant : +public
+
+
+' class Animal #FFFFFF{
+'     #has_tail_: bool
+'     #has_wings_: bool
+'     #has_horns_: bool
+'     +can_fly(): bool
+' }
+' class Human #FFFFFF{
+'     #is_bipedal_: bool
+'     +speak(speech: std::string): void
+' }
+' class MythicalCreature #FFFFFF{
+'     -powers_: std::vector<std::string>
+'     +use_power(power: std::string): void
+' }
+
+
+
+' Animal <|-- MythicalCreature : +public
+' Human <|-- MythicalCreature : +public
+
+
+@enduml

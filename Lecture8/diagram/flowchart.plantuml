@@ -1,0 +1,31 @@
+@startuml
+
+|Environment|
+start
+:Create environment;
+:Create robots;
+
+|Robot|
+:Initialize robot;
+:Initialize components;
+:Initialize tasks;
+:Perform tasks;
+
+|Component|
+:Operate each component;
+
+|Task|
+:Execute each task;
+
+|Component|
+if (Is component an arm?) then (yes)
+  :Move to position;
+else (no)
+  :Collect data;
+endif
+
+|Environment|
+:Simulate environment;
+stop
+
+@enduml

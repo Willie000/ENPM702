@@ -1,0 +1,55 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+class Base #FFFFFF{
+    +base_public_: int=10
+    #base_protected_: int=20
+    -base_private_: int=30
+}
+
+class DerivedPublic #FFFFFF{
+    +/base_public_: int
+    #/base_protected_: int
+    -/base_private_: int
+}
+class DerivedProtected #FFFFFF{
+    #/base_public_: int
+    #/base_protected_: int
+    -/base_private_: int
+}
+class DerivedPrivate #FFFFFF{
+    -/base_public_: int
+    -/base_protected_: int
+    -/base_private_: int
+}
+
+
+
+
+Base <|-- DerivedPublic : +public
+Base <|-- DerivedProtected : #protected
+Base <|-- DerivedPrivate : -private
+
+
+' class Animal #FFFFFF{
+'     #has_tail_: bool
+'     #has_wings_: bool
+'     #has_horns_: bool
+'     +can_fly(): bool
+' }
+' class Human #FFFFFF{
+'     #is_bipedal_: bool
+'     +speak(speech: std::string): void
+' }
+' class MythicalCreature #FFFFFF{
+'     -powers_: std::vector<std::string>
+'     +use_power(power: std::string): void
+' }
+
+
+
+' Animal <|-- MythicalCreature : +public
+' Human <|-- MythicalCreature : +public
+
+
+@enduml

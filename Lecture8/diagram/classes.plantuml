@@ -1,0 +1,66 @@
+@startuml
+
+class Component {
+    +Component()
+    +Component(name: std::string)
+    +Component(name: std::string, brand: std::string)
+    +Component(name: std::string, brand: std::string, sku: std::string)
+    +virtual void operate() = 0
+    +std::string get_name() const
+    +std::string get_brand() const
+    +std::string get_sku() const
+    +bool is_attached() const
+    -std::string name_
+    -std::string brand_
+    -std::string sku_
+    -bool attached_
+}
+
+class Arm {
+    +Arm(name: std::string, brand: std::string, sku: std::string, length: int)
+    +void move_to_position(x: int, y: int, z: int)
+    +void operate() override
+    +int get_length() const
+    -int length_
+}
+
+class Sensor {
+    +Sensor(name: std::string, brand: std::string, sku: std::string, range: int)
+    +void collect_data()
+    +void operate() override
+    +int get_range() const
+    -int range_
+}
+
+class Task {
+    +Task(description: std::string)
+    +void execute()
+    +std::string get_description() const
+    -std::string description_
+}
+
+class Robot {
+    +Robot(name: std::string)
+    +void add_component(component: std::shared_ptr<Component>)
+    +void add_task(task: std::shared_ptr<Task>)
+    +void perform_tasks()
+    -std::string name_
+    -std::vector<std::shared_ptr<Component>> components_
+    -std::vector<std::shared_ptr<Task>> tasks_
+}
+
+class Environment {
+    +Environment(name: std::string)
+    +void add_robot(robot: std::shared_ptr<Robot>)
+    +void simulate()
+    -std::string name_
+    -std::vector<std::shared_ptr<Robot>> robots_
+}
+
+Component <|-- Arm
+Component <|-- Sensor
+Robot *-- Component
+Robot *-- Task
+Environment o-- Robot
+
+@enduml

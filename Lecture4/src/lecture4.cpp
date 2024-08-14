@@ -5,25 +5,25 @@
 /******* slide 14 *******/
 //========================
 
-// int main() {
-//     int x{10};
-//     int *p_int{&x};
-//     std::cout << &x << '\n';
-//     std::cout << p_int << '\n';
-// }
+int main() {
+    int x{10};
+    int *p_int{&x};
+    std::cout << &x << '\n';
+    std::cout << p_int << '\n';
+}
 
 //========================
 /******* slide 15 *******/
 //========================
 
-int main() {
-    int x{10};
-    std::cout << typeid(&x).name() << '\n';
-    int *p_int;
-    std::cout << typeid(p_int).name() << '\n';
-    std::cout << *(&p_int) << '\n';
-    std::cout << p_int << '\n';
-}
+// int main() {
+//     int x{10};
+//     std::cout << typeid(&x).name() << '\n';
+//     int *p_int;
+//     std::cout << typeid(p_int).name() << '\n';
+//     std::cout << *(&p_int) << '\n';
+//     std::cout << p_int << '\n';
+// }
 
 //========================
 /******* slide 20 *******/

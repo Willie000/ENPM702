@@ -1,0 +1,67 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+' class Environment{
+'     -std::string name_
+'     -std::vector<std::shared_ptr<robotics::Robot>> robots_
+'     +Environment(name: std::string)
+'     +void add_robot(robot: std::shared_ptr<robotics::Robot>)
+'     +void simulate()
+' }
+
+class Robot{
+    -std::string name_
+    -std::vector<std::shared_ptr<robotics::Component>> components_
+    +Robot(name: std::string)
+    +std::string get_name()
+    +void attach_components(components: std::shared_ptr<robotics::Component>)
+    +void attach_component(std::shared_ptr<robotics::Component> component)
+    +void perform_tasks(tasks: std::vector<std::shared_ptr<robotics::Task>>)
+}
+
+' class Task{
+'     -std::string name_
+'     -std::string description_
+'     +Task(name: std::string, description: std::string)
+'     +void execute()
+'     +std::string get_description()
+'     +std::string get_name()
+' }
+
+class Component{
+    #std::string name_
+    #std::string brand_
+    #std::string sku_
+    #bool attached_
+    +Component(name: std::string, brand: std::string, sku: std::string)
+    +virtual void operate()=0
+    +std::string get_name()
+    +std::string get_brand()
+    +std::string get_sku()
+    +bool is_attached()
+}
+
+' class Arm{
+'     -double length_
+'     +Arm(name: std::string, brand: std::string, sku: std::string, length: double)
+'     +void move_to_position(x: double, y: double, z: double)
+'     +void operate() override
+'     +double get_length()
+' }
+
+' class Sensor{
+'     -double range_
+'     +Sensor(name: std::string, brand: std::string, sku: std::string, range: double)
+'     +void move_to_position(x: double, y: double, z: double)
+'     +void operate() override
+'     +double get_range()
+' }
+
+' Environment "1..*" o- Robot
+' Robot "1..*" ..> Task
+Robot "1..*" *.. Component
+' Component <|-- Arm
+' Component <|-- Sensor
+
+
+@enduml

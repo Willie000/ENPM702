@@ -1,0 +1,18 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+class Shape{}
+class Triangle{}
+class Vehicle{}
+class Car{}
+class Animal{}
+class Elephant{}
+
+
+
+Shape <|-- Triangle
+Vehicle <|-- Car
+Animal <|-- Elephant
+
+
+@enduml

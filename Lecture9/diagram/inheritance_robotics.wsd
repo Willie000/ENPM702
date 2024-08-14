@@ -1,0 +1,42 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+package robotics <<Frame>>{
+class Component #FFFFFF{
+    #std::string name_
+    #std::string brand_
+    #std::string sku_
+    #bool attached_
+    +Component(name: std::string, brand: std::string, sku: std::string)
+    +virtual void operate()=0
+    +std::string get_name()
+    +std::string get_brand()
+    +std::string get_sku()
+    +void set_attached(bool value)
+    +bool is_attached()
+}
+
+class Arm #FFFFFF{
+    -double reach_
+    +Arm(name: std::string, brand: std::string, sku: std::string, reach: double)
+    +void move_to_position(x: double, y: double, z: double)
+    +virtual void operate() override
+    +double get_reach()
+}
+
+class Sensor #FFFFFF{
+    -double range_
+    +Sensor(name: std::string, brand: std::string, sku: std::string, range: double)
+    +void collect_data()
+    +virtual void operate() override
+    +double get_range()
+}
+
+' Environment "1..*" o- Robot
+' Robot "1..*" ..> Task
+' Robot "1..*" *.. Component
+Component <|-- Arm: +public
+Component <|-- Sensor: +public
+}
+
+@enduml
