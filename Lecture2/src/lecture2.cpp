@@ -42,15 +42,15 @@ long double 8,12, or 16 士3.36x10^-4932 to 士1.18x10^4932   33-36 significant 
 
  */
 
-// //--------- slide 29
+//--------- std::setprecision()
 // int main(){
 //     std::cout << std::setprecision(9);      // show 9 digits of precision
-//     std::cout << 0.33333339333f << '\n';    // 0.333333343
-//     std::cout << std::setprecision(15) << '\n';
-//     std::cout << 8.3642343534322323232322 << '\n'; // 8.36423435343223 (15 digits)
+//     std::cout << 0.33333339333f << '\n';    // 0.333333343, because flot typically have 7 significant digits
+//     std::cout << std::setprecision(15) << '\n'; 
+//     std::cout << 8.3642343534322323232322 << '\n'; // 8.36423435343223 (15 digits) as double
 // }
 
-// //--------- slide 30
+// //--------- booling 1,0 true, false
 // int main(){
 //     bool is_today_sunny{true};
 //     bool is_today_cloudy{false};
@@ -63,7 +63,7 @@ long double 8,12, or 16 士3.36x10^-4932 to 士1.18x10^4932   33-36 significant 
 // }
 
 
-// // --------- slide 34
+// // --------- Convertion
 // int main(){
 //     double num1 = 1.5;
 //     int num2 = num1; // 1.5 converted to 1
@@ -73,13 +73,13 @@ long double 8,12, or 16 士3.36x10^-4932 to 士1.18x10^4932   33-36 significant 
 // }
 
 
-// // --------- slide 36
+// // --------- Example
 // int main() {
-//     std::cout << 3 / 2 << '\n';
-//     std::cout << 3.0f / 2 << '\n';
+//     std::cout << 3 / 2 << '\n'; //result is 1 because 3 is a int.
+//     std::cout << 3.0f / 2 << '\n'; // To get 1.5, must use flot or double. 
 // }
 
-// // --------- slide 38
+// // --------- Convertion
 // int main() {
 //     short s{1};
 //     int num1 = s;                   // short promoted to int
@@ -91,18 +91,18 @@ long double 8,12, or 16 士3.36x10^-4932 to 士1.18x10^4932   33-36 significant 
 //     std::cout << sizeof(s) << '\n'; // 2
 // }
 
-// // --------- slide 40
-int main() {
-    short s = 2;
-    char c = 65;
-    std::cout << c << '\n'; // dec of char
-    std::cout << static_cast<int>(c) << '\n';  // print char
-    int d = static_cast<int>(c);
-    std::cout << d << std::endl;
-    std::cout << s << '\n';
-}
+// // --------- ASCII (char)
+// int main() {
+//     short s = 2;
+//     char c = 65;
+//     std::cout << c << '\n'; // dec of char
+//     std::cout << static_cast<int>(c) << '\n';  // print char
+//     int d = static_cast<int>(c);
+//     std::cout << d << std::endl;
+//     std::cout << s << '\n';
+// }
 
-// // --------- slide 45
+// // --------- int, short, double
 // int main(){
 //     // int and long double are on the priority list
 //     // Rule #1: int converted to long double
@@ -124,7 +124,7 @@ int main() {
 //     std::cout << typeid(e + f).name() << ' ' << e + f << '\n'; // int 2
 // }
 
-// // --------- slide 48
+// // --------- cout mutiple data and types
 // int main() {
 //     int x{1};
 //     std::cout << x << '\n';                     // print a variable
@@ -132,7 +132,7 @@ int main() {
 //     std::cout << x << " hello, " << "world\n";  // print different data types
 // }
 
-// // --------- slide 49
+// // --------- cin
 // int main() {
 //     std::cout << "Enter your age: ";            // ask user for their age
 //     unsigned short age{};                       // init variable to hold user input
@@ -146,7 +146,7 @@ int main() {
 //     // std::cout << "a: " << a << ", b: " << b <<'\n';
 // }
 
-// // --------- slide 50
+// // --------- cin
 // int main() {
 //     std::cout << "Enter two integers separated by a space: ";
 //     int a{};                       // init variable to hold the first number
@@ -155,33 +155,26 @@ int main() {
 //     std::cout << "a: " << a << ", b: " << b <<'\n';
 // }
 
-// // --------- slide 54
+// // --------- const
 // int main() {
 //     const double pi;
 
 //     // const double pi{3.141598};  // initialization  
-//     // pi = 3.14;                  // error
+//     // pi = 3.14;                  // error, because pi is const cannot assign other values
 // }
 
-// // --------- slide 55
-// #include "test.h"
 
-// int main() {
-//     const double pi{3.14159};
-//     std::cout << "pi: " << pi << '\n';
-// } 
-
-// // --------- slide 59
+// // --------- constexpr
 // int main() {
 //     constexpr int a{1};     // OK: a is a compile-time const
 //     constexpr int b{2};     // OK: b is a compile-time const
 //     std::cout << "Enter an integer: ";
 //     int input{};
-//     std::cin >> input;
-//     constexpr int c{input}; // error
+//     std::cin >> input; // run time start
+//     constexpr int c{input}; // error, exceed compile-time
 // } 
 
-// // --------- slide 60
+// // --------- auto
 // int main() {
 //     auto a{3.0};    // 3.0 is a double literal, so variable a will be type double
 //     auto b{1 + 2};  // 1 + 2 evaluates to an int, so b will be type int
@@ -190,7 +183,7 @@ int main() {
 // } 
 
 
-// //--------- slide 62
+// //--------- nest
 // int main(){         // start outer block
 //     int a{};
 //     {               // start nested block 1
@@ -201,7 +194,7 @@ int main() {
 //     }               // end nested block 1
 // }                   // end outer block
 
-// // --------- slide 64
+// // --------- inside or outside the nest
 // int main() {
 //     int a{1};
 //     {
@@ -213,13 +206,13 @@ int main() {
 //     int c{3};
 // } // a and c go out of scope here.
 
-// // --------- slide 66
+// // --------- function (void)
 // int global_var{1};
-
+//
 // void my_function(){
 //     global_var++;
 // }
-
+//
 // int main() {
 //     std::cout << global_var << '\n';    // 1
 //     global_var++;                       // 2 
@@ -227,7 +220,7 @@ int main() {
 //     std::cout << global_var << '\n';    // 3
 // } 
 
-// // --------- slide 72
+// // --------- namespace
 // // namespace MyNamespace
 // namespace MyNamespace {
 // int x{3};
@@ -239,37 +232,37 @@ int main() {
 //     std::cout << MyNamespace::y << '\n';  // 4
 // }
 
-// // --------- slide 73
+// // --------- namespace
 // // namespace MyNamespace
 // namespace MyNamespace {
 // int x{3};
 // int y{4};
 // } // end namespace MyNamespace
-
-
-// using namespace MyNamespace;
-
+//
+//
+// using namespace MyNamespace; // declear namespace to use 
+//
 // int main() {
 //     std::cout << x << '\n';  // no need to use MyNamespace::x
 //     std::cout << y << '\n';  // no need to use MyNamespace::y
 // }
 
-// // --------- slide 74
+// // --------- using part of namespace 
 // // namespace MyNamespace
 // namespace MyNamespace {
 // int x{3};
 // int y{4};
 // }  // end namespace MyNamespace
-
-
+// 
+// 
 // using MyNamespace::x;
-
+// 
 // int main() {
 //     std::cout << x << '\n';  // no need to use MyNamespace::x
 //     std::cout << y << '\n';  // error: ‘y’ was not declared in this scope
 // }
 
-// // --------- slide 75
+// // --------- custom namespace, nameing issue
 // // custom namespace
 // namespace MyNamespace{
 // int cout{1};
