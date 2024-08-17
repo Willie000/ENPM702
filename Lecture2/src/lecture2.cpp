@@ -2,28 +2,27 @@
 #include <iomanip> // for std::setprecision
 
 // int main(){
-
+//
 //     // declaration and initialization
 //     // 1. declar each variabe in diff lines
 //     // 2. no need to declar all at once
-
+//
 //     int a = 0;  // copy initialization (X)
 //     int b();   // direct initialization (X)
 //     int c{};   // uniform initialization (O)
-
+//
 //     // assign value
 //     c = 20;
 //     std::cout << sizeof(c) << "\n"; // 4 bytes on my machine
 //     std::cout << sizeof(int) << "\n"; // 4 bytes on my machine
 //     std::cout << &c << '\n'; //show address of c
-
+//
 //     double d{};             // initializedto 0.0
 //     std::cout << d << '\n'; // 0: Omit unnecessary trailing decimal places and zeroes
 //     std::cout << std::fixed << std::setprecision(1) <<  d << '\n'; // 0.0
-
+//
 //     int e;  // uninitialized, avoid this
 //     std::cout << e << '\n';   // garbage data
-
 // }
 
 /*
@@ -109,14 +108,14 @@ long double 8,12, or 16 士3.36x10^-4932 to 士1.18x10^4932   33-36 significant 
 //     int a{4};
 //     long double b{3.323223};
 //     std::cout << typeid(a + b).name() << ' ' << a + b << '\n'; // long double 7.32322
-    
+//
 //     // double is on the priority list
 //     // short is not on the priority list
 //     // Rule #1: short is converted to double
 //     double c{1.5};
 //     short d{1};
 //     std::cout << typeid(c + d).name() << ' ' << c + d << '\n'; // double 2.5
-    
+//
 //     // short is not on the priority list
 //     // Rule #2: short is promoted to int
 //     short e{1};
@@ -138,7 +137,7 @@ long double 8,12, or 16 士3.36x10^-4932 to 士1.18x10^4932   33-36 significant 
 //     unsigned short age{};                       // init variable to hold user input
 //     std::cin >> age;                            // store input in variable age
 //     std::cout << "Your age is " << age << '\n';
-
+//
 //     // std::cout << "Enter two integers separated by a space: ";
 //     // int a{};                       // init variable to hold the first number
 //     // int b{};                       // init variable to hold the second number
@@ -158,7 +157,7 @@ long double 8,12, or 16 士3.36x10^-4932 to 士1.18x10^4932   33-36 significant 
 // // --------- const
 // int main() {
 //     const double pi;
-
+//
 //     // const double pi{3.141598};  // initialization  
 //     // pi = 3.14;                  // error, because pi is const cannot assign other values
 // }
@@ -226,7 +225,7 @@ long double 8,12, or 16 士3.36x10^-4932 to 士1.18x10^4932   33-36 significant 
 // int x{3};
 // int y{4};
 // } // end namespace MyNamespace
-
+//
 // int main() {
 //     std::cout << MyNamespace::x << '\n';  // 3
 //     std::cout << MyNamespace::y << '\n';  // 4
