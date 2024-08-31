@@ -5,12 +5,12 @@
 /******* slide 14 *******/
 //========================
 
-int main() {
-    int x{10};
-    int *p_int{&x};
-    std::cout << &x << '\n';
-    std::cout << p_int << '\n';
-}
+// int main() {
+//     int x{10};
+//     int *p_int{&x};
+//     std::cout << &x << '\n'; // show address
+//     std::cout << p_int << '\n';
+// }
 
 //========================
 /******* slide 15 *******/

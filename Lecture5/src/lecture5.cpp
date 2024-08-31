@@ -9,11 +9,13 @@
 //========================
 /******* slide 15 *******/
 //========================
-int main() {
-  std::cout << typeid("hello, world\n").name() << '\n';
-  auto my_string{"hello, world\n"};
-  std::cout << typeid(my_string).name() << '\n';
-}
+// int main() {
+//   std::cout << typeid("hello, world\n").name() << '\n';
+
+//   auto my_string{"hello, world\n"};
+
+//   std::cout << typeid(my_string).name() << '\n';
+// }
 
 //========================
 /******* slide 18 *******/
@@ -33,11 +35,11 @@ int main() {
 //   std::string s0{"Initial string"};  // initialized from a C string
 //   std::string s1;                    // empty string
 //   std::string s2{s0};                // initialized from another string
-//   std::string s3(s0, 8, 3);          // "str"
-//   std::string s4("Another character sequence", 12);  // "Another char"
+//   std::string s3(s0, 8, 3);          // "str" from 8, count 3
+//   std::string s4("Another character sequence", 12);  // "Another char", first 12
 //   std::string s5a(10, 'x');                          // "xxxxxxxxxx"
-//   std::string s5b(10, 42);                           // "**********"
-//   std::string s6(s0.begin(), s0.begin() + 7);        // "Initial"
+//   std::string s5b(10, 43);                           // "**********", ASCII
+//   std::string s6(s0.begin(), s0.begin() + 7);        // "Initial", s0.begin()=0
 
 //   std::cout << "s0: " << s0 << '\n';
 //   std::cout << "s1: " << s1 << '\n';
@@ -54,16 +56,16 @@ int main() {
 //========================
 // int main() {
 //   auto greeting1{"hello"};
-//   auto greeting2{"hello"s};
+//   // auto greeting2{"hello"s};
 //   std::cout << typeid(greeting1).name() << '\n';
-//   std::cout << typeid(greeting2).name() << '\n';
+//   // std::cout << typeid(greeting2).name() << '\n';
 //   std::cout << "hello" << '\n';
-//   std::cout << "hello"s << '\n';
+//   // std::cout << "hello"s << '\n';
 // }
 
 //========================
 /******* slide 21 *******/
-//========================
+// //========================
 // int main() {
 //   std::string my_string{"short string"};
 //   std::cout << sizeof(my_string) << '\n';
